@@ -26,14 +26,15 @@ export default function Navigation() {
     event.preventDefault();
     console.log(value);
 
-   const refNames = [
-  { name: 'aktualnosciTargetRef', ref: aktualnosciTargetRef },
-  { name: 'teamTargetRef', ref: teamTargetRef },
-  { name: 'wydarzeniaTargetRef', ref: wydarzeniaTargetRef },
-  { name: 'ciekawostkiTargetRef', ref: ciekawostkiTargetRef },
-];
-  const targetRef = refNames.find(ref => ref.name === value);
-  targetRef.ref.current.scrollIntoView({ behavior: 'smooth' });
+   const refNames = {'aktualnosciTargetRef': aktualnosciTargetRef,
+  'teamTargetRef': teamTargetRef,
+  'wydarzeniaTargetRef': wydarzeniaTargetRef,
+  'ciekawostkiTargetRef': ciekawostkiTargetRef,
+  };
+
+  refNames[value].current.scrollIntoView({ behavior: 'smooth' });
+  
+
 };
 
 
@@ -85,7 +86,7 @@ export default function Navigation() {
                 <img
                   className="h-8 w-auto"
                   src={bridgeLogo}
-                  alt=""
+                  alt="Logo z kartami"
                 />
               </a>
               <button
@@ -93,20 +94,20 @@ export default function Navigation() {
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span className="sr-only">Close menu</span>
+                <span className="sr-only">Zamknij menu</span>
                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
+                  {navigation.map(({name, href}) => (
                     <a
-                      key={item.name}
-                      href={item.href}
+                      key={name}
+                      href={href}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                      {item.name}
+                      {name}
                     </a>
                   ))}
                 </div>
