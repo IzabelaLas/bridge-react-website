@@ -8,21 +8,33 @@ import Wydarzenia from '@/navigation/Wydarzenia'
 import Ciekawostki from '@/navigation/Ciekawostki'
 
 const navigation = [
-  { name: 'Aktualności', href: '#aktualnosciTarget' },
-  { name: 'Team', href: '#teamTarget' },
-  { name: 'Wydarzenia', href: '#wydarzeniaTarget' },
-  { name: 'Ciekawostki', href: '#ciekawostkiTarget' },
+  { name: 'Aktualności', href: '#aktualnosciTarget', value: 'aktualnosciTargetRef'  },
+  { name: 'Team', href: '#teamTarget', value: 'teamTargetRef' },
+  { name: 'Wydarzenia', href: '#wydarzeniaTarget', value: 'wydarzeniaTargetRef' },
+  { name: 'Ciekawostki', href: '#ciekawostkiTarget', value: 'ciekawostkiTargetRef' },
 ]
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const targetRef = useRef(null);
+  const aktualnosciTargetRef = useRef(null);
+  const teamTargetRef = useRef(null);
+  const wydarzeniaTargetRef = useRef(null);
+  const ciekawostkiTargetRef = useRef(null);
 
-  const handleClick = (event) => {
+  const handleClick = (event, value) => {
     event.preventDefault();
-    targetRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
+    console.log(value);
+
+   const refNames = [
+  { name: 'aktualnosciTargetRef', ref: aktualnosciTargetRef },
+  { name: 'teamTargetRef', ref: teamTargetRef },
+  { name: 'wydarzeniaTargetRef', ref: wydarzeniaTargetRef },
+  { name: 'ciekawostkiTargetRef', ref: ciekawostkiTargetRef },
+];
+  const targetRef = refNames.find(ref => ref.name === value);
+  targetRef.ref.current.scrollIntoView({ behavior: 'smooth' });
+};
 
 
   return (
@@ -52,9 +64,9 @@ export default function Navigation() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <a key={item.name} href={item.href} onClick={handleClick} className="text-sm font-semibold leading-6 text-gray-900">
-                {item.name} 
+            {navigation.map(({ name, href, value }) => (
+              <a key={name} href={href} onClick={(event) => handleClick(event, value)} className="text-sm font-semibold leading-6 text-gray-900">
+                {name} 
               </a>
             ))}
           </div>
@@ -163,16 +175,16 @@ export default function Navigation() {
         </div>
       </div>
     </div>
-      <div ref={targetRef} id="aktualnosciTarget">
+      <div ref={aktualnosciTargetRef} id="aktualnosciTarget">
         <Aktualnosci />
       </div>
-     <div ref={targetRef} id="teamTarget">
+     <div ref={teamTargetRef} id="teamTarget" >
       <Team />
      </div>
-     <div ref={targetRef} id="wydarzeniaTarget">
+     <div ref={wydarzeniaTargetRef} id="wydarzeniaTarget">
       <Wydarzenia />
      </div> 
-     <div ref={targetRef} id="ciekawostkiTarget">
+     <div ref={ciekawostkiTargetRef} id="ciekawostkiTarget">
       <Ciekawostki />
      </div>
     </div>
