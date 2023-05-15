@@ -1,27 +1,10 @@
 export default function Wydarzenia() {
     return (
-        <div className="text-center">
+        <div className="m-2 p-3 text-center">
+          <h2 className="font-bold text-4xl tracking-tight text-gray-900 sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">Wydarzenia</h2>
           <div>
-            Witamy w  Wydarzeniach
-           </div>
-          <p>Zakładka Wydarzenia pokazuje najblizsze wydarzenia, zobaczymy czego mozna sie spodziewać itd. </p>
-          <div>
-            Witamy w  Wydarzenia
-           </div>
-          <p>Zakładka Wydarzenia pokazuje najblizsze wydarzenia, zobaczymy czego mozna sie spodziewać itd. </p><div>
-            Witamy w  Wydarzenia
-           </div>
-          <p>Zakładka Wydarzenia pokazuje najblizsze wydarzenia, zobaczymy czego mozna sie spodziewać itd. </p><div>
-            Witamy w  Wydarzenia
-           </div>
-          <p>Zakładka Wydarzenia pokazuje najblizsze wydarzenia, zobaczymy czego mozna sie spodziewać itd. </p><div>
-            Witamy w  Wydarzenia
-           </div>
-          <p>Zakładka Wydarzenia pokazuje najblizsze wydarzenia, zobaczymy czego mozna sie spodziewać itd. </p><div>
-            Witamy w  Wydarzenia
-           </div>
-          <p>Zakładka Wydarzenia pokazuje najblizsze wydarzenia, zobaczymy czego mozna sie spodziewać itd. </p>
-       
+            
+          </div>
         </div>
     )
 }

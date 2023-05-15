@@ -27,10 +27,9 @@ export default function Team() {
         <div className="grid grid-cols-2 gap-1 m-1"> 
 
         {pictures.map((picture, index)  => (
-          <div key={index} >
+          <div key={index}>
             <div className='overflow-hidden'><img className="opacity-70 w-full hover:opacity-100 hover:scale-125" src={picture.foto} alt="team member" /></div>
-               <div><p>{picture.name}</p></div>
-               
+               <div className="text-white font-bold translate-y-[-30px]"><p>{picture.name}</p></div>
           </div>
         ))}
         </div>

@@ -5,13 +5,13 @@ import bridgeLogo from '@/poker-cards.png'
 import Team from '@/navigation/Team'
 import Aktualnosci from '@/navigation/Aktualnosci'
 import Wydarzenia from '@/navigation/Wydarzenia'
-import Ciekawostki from '@/navigation/Ciekawostki'
+import Wyniki from './Wyniki'
 
 const navigation = [
   { name: 'Aktualności', href: '#aktualnosciTarget', value: 'aktualnosciTargetRef'  },
   { name: 'Team', href: '#teamTarget', value: 'teamTargetRef' },
   { name: 'Wydarzenia', href: '#wydarzeniaTarget', value: 'wydarzeniaTargetRef' },
-  { name: 'Ciekawostki', href: '#ciekawostkiTarget', value: 'ciekawostkiTargetRef' },
+  { name: 'Wyniki', href: '#wynikiTarget', value: 'wynikiTargetRef' },
 ]
 
 export default function Navigation() {
@@ -20,7 +20,7 @@ export default function Navigation() {
   const aktualnosciTargetRef = useRef(null);
   const teamTargetRef = useRef(null);
   const wydarzeniaTargetRef = useRef(null);
-  const ciekawostkiTargetRef = useRef(null);
+  const wynikiTargetRef = useRef(null);
 
   const handleClick = (event, value) => {
     event.preventDefault();
@@ -29,7 +29,7 @@ export default function Navigation() {
    const refNames = {'aktualnosciTargetRef': aktualnosciTargetRef,
   'teamTargetRef': teamTargetRef,
   'wydarzeniaTargetRef': wydarzeniaTargetRef,
-  'ciekawostkiTargetRef': ciekawostkiTargetRef,
+  'wynikiTargetRef': wynikiTargetRef,
   };
 
   refNames[value].current.scrollIntoView({ behavior: 'smooth' });
@@ -167,7 +167,7 @@ export default function Navigation() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[20.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#0E9F4C] to-[#00662B] opacity-50 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(40%+3rem)] aspect-[1155/678] w-[20.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#0E9F4C] to-[#00662B] opacity-90 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -185,8 +185,8 @@ export default function Navigation() {
      <div ref={wydarzeniaTargetRef} id="wydarzeniaTarget">
       <Wydarzenia />
      </div> 
-     <div ref={ciekawostkiTargetRef} id="ciekawostkiTarget">
-      <Ciekawostki />
+     <div ref={wynikiTargetRef} id="wynikiTarget">
+      <Wyniki />
      </div>
     </div>
   )
