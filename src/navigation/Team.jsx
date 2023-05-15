@@ -23,13 +23,14 @@ export default function Team() {
 
     return (
       <div className="text-center">
-        <h2 className="font-bold text-4xl tracking-tight text-gray-900 sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">Team members</h2>
+        <h2 className="font-bold text-4xl tracking-tight text-gray-900 sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">Team</h2>
         <div className="grid grid-cols-2 gap-1 m-1"> 
 
         {pictures.map((picture, index)  => (
-          <div key={index}>
-               <img src={picture.foto} alt="team member" />
-               <p>{picture.name}</p>
+          <div key={index} >
+            <div className='overflow-hidden'><img className="opacity-70 w-full hover:opacity-100 hover:scale-125" src={picture.foto} alt="team member" /></div>
+               <div><p>{picture.name}</p></div>
+               
           </div>
         ))}
         </div>
