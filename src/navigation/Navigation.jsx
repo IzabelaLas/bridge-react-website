@@ -131,7 +131,7 @@ export default function Navigation() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0E9F4C] to-[#00662B] opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#0E9F4C] to-[#00662B] opacity-70 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -143,11 +143,10 @@ export default function Navigation() {
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">
-              Data to enrich your online business
+              Brydż sportowy w Sieradzu
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+              Znajdą tu Państwo najważniejsze informacje dotyczące brydża i dokonań naszej drużyny. Zapraszamy serdecznie do zapoznania się z aktualnościami.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -167,7 +166,7 @@ export default function Navigation() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(40%+3rem)] aspect-[1155/678] w-[20.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#0E9F4C] to-[#00662B] opacity-90 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(40%+3rem)] aspect-[1155/678] w-[20.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#0E9F4C] to-[#00662B] sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',

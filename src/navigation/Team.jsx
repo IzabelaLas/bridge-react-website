@@ -17,18 +17,16 @@ export default function Team() {
   { foto: people4, name: 'Amy, Warsaw' },
   { foto: people5, name: 'John, Warsaw' },
   { foto: people6, name: 'Mark, Warsaw' },
-  { foto: people7, name: 'Bob, Warsaw' },
-  { foto: people8, name: 'Amy, Warsaw' },
 ];
 
     return (
       <div className="text-center">
         <h2 className="font-bold text-4xl tracking-tight text-gray-900 sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">Team</h2>
-        <div className="grid grid-cols-2 gap-1 m-1"> 
+        <div className="grid grid-cols-2 gap-10 m-[90px]"> 
 
         {pictures.map((picture, index)  => (
           <div key={index}>
-            <div className='overflow-hidden'><img className="opacity-70 w-full hover:opacity-100 hover:scale-125" src={picture.foto} alt="team member" /></div>
+            <div className='overflow-hidden'><img className="rounded-3xl opacity-70 w-full hover:opacity-100 hover:scale-125" src={picture.foto} alt="team member" /></div>
                <div className="text-white font-bold translate-y-[-30px]"><p>{picture.name}</p></div>
           </div>
         ))}
