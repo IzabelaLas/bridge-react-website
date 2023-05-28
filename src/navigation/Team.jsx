@@ -4,8 +4,6 @@ import people3 from '@/images/people.jpg'
 import people4 from '@/images/people.jpg'
 import people5 from '@/images/people.jpg'
 import people6 from '@/images/people.jpg'
-import people7 from '@/images/people.jpg'
-import people8 from '@/images/people.jpg'
 
 
 export default function Team() {
@@ -22,7 +20,7 @@ export default function Team() {
     return (
       <div className="text-center">
         <h2 className="font-bold text-4xl tracking-tight text-gray-900 sm:text-6xl md:text-6xl lg:text-6xl xl:text-6xl 2xl:text-6xl">Team</h2>
-        <div className="grid grid-cols-2 gap-10 m-[90px]"> 
+        <div className="grid grid-cols-3 gap-10 m-[90px]"> 
 
         {pictures.map((picture, index)  => (
           <div key={index}>
