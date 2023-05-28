@@ -10,7 +10,7 @@ import Wyniki from './Wyniki'
 const navigation = [
   { name: 'Aktualności', href: '#aktualnosciTarget', value: 'aktualnosciTargetRef'  },
   { name: 'Team', href: '#teamTarget', value: 'teamTargetRef' },
-  { name: 'Wydarzenia', href: '#wydarzeniaTarget', value: 'wydarzeniaTargetRef' },
+  { name: 'Galeria', href: '#wydarzeniaTarget', value: 'wydarzeniaTargetRef' },
   { name: 'Wyniki', href: '#wynikiTarget', value: 'wynikiTargetRef' },
 ]
 
