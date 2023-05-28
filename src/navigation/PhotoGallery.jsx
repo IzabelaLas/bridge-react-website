@@ -1,31 +1,62 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const PhotoGallery = () => {
-  const [mainImage, setMainImage] = useState(0); // keep track of which image is the main image
 
-  const images = [
-    "https://images.unsplash.com/photo-1508997449629-303059a039c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1561489396-888724a1543d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "https://images.unsplash.com/photo-1522158637959-30385a09e0da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { EffectCoverflow, Pagination, Navigation } from 'swiper';
+
+import first from '@/images/first.jpg';
+import second from '@/images/second.jpg';
+import third from '@/images/third.jpg';
+import forth from '@/images/forth.jpg';
+import fifth from '@/images/fifth.jpg';
+import sixth from '@/images/sixth.jpg';
+import seventh from '@/images/seventh.jpg';
+
+function PhotoGallery() {
+
+     const photos = [
+  { foto: first, name: 'Jakis opis 1' },
+  { foto: second, name: 'Jakis opis 2' },
+  { foto: third, name: 'Jakis opis 3' },
+  { foto: forth, name: 'Jakis opis 4' },
+  { foto: fifth, name: 'Jakis opis 5' },
+  { foto: sixth, name: 'Jakis opis 6' },
+  { foto: seventh, name: 'Jakis opis 7' },
 ];
 
-  const handleClick = (index) => {
-    setMainImage(index);
-  }
 
   return (
-    <div className="container">
-      <div className="main-image">
-        <img src={images[mainImage]} alt="Main" />
-      </div>
-      <div className="small-images-container">
-        {images.slice(1).map((image, index) => (
-          <div key={index} className={`small-image ${mainImage === index + 1 ? 'active' : ''}`} onClick={() => handleClick(index + 1)}>
-            <img src={image} alt={`Thumbnail ${index+1}`} />
-          </div>
-        ))}
-      </div>
+    <div className="max-w-7xl px-4 py-2 mx-auto">
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+        }}
+        pagination={{ el: '.swiper-pagination', clickable: true }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="h-[52rem] py-8 px-0 relative"
+      >
+        {photos.map((photo, index)  => (
+        <SwiperSlide key={index}>
+            <img src={photo.foto} alt="slide_image" />
+        </SwiperSlide>
+         ))}
+        <div className="slider-controler relative bottom-8 flex items-center justify-center">
+          <div className="swiper-pagination relative"></div>
+        </div>
+      </Swiper>
     </div>
   );
 }
